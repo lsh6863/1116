@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pure CSS3 Accordion Menu with CSS3</title>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- http://www.script-tutorials.com/css3-responsive-menu/ -->
+</head>
+<style>
+	@font-face {
+		font-family: "Genericons";
+		src:url("genericons-regular-webfont.eot") format("truetype");
+		src:url("genericons-regular-webfont.woff") format("woff");
+		font-weight: 400;
+		font-style: normal;
+	}
+	body {
+		margin: 20px;
+		padding: 20px;
+		font-family: 나눔고딕;
+		font-size: 1em;
+		background: #555;
+		color: #333;
+	}
+	.container {
+		min-width: 320px;
+		margin: 35px auto;
+	}
+	.title {
+		font-size: 1.5em;
+		color: #000;
+	}
+	.accordion {
+		display: block;
+		width: 100%;
+		height: 200px;
+		min-width: 950px;
+		overflow: hidden;
+		list-style: none;
+		/*font-size: 0;*/
+		background: #8ac007;
+	}
+	.tabs {
+		display: inline-block;
+		position: relative;
+		width: 80px;
+		height: 200px;
+		overflow: hidden;
+		font-size: 1em;
+		background: #8ac007;
+		border-right: 1px solid rgba(0,0,0,0.2);
+		transition: 0.3s;
+	}
+	.tabs:hover {
+		width: 450px;
+	}
+	.tabs .paragraph {
+		margin-left: 80px;
+		background: #fff;
+		width: 360px;
+		height: 200px;
+		padding: 50px 0 0 10px;
+	}
+	.tabs .paragraph h1 {
+		font-size: 2em;
+		margin-bottom: 18px;
+	}
+	.tabs .paragraph p {
+		padding-right: 30px;
+		line-height: 1.5em;
+	}
+	.tabs .social-links {
+		display: block;
+	}
+	.tabs .social-links a {
+		display: block;
+		line-height: 0;
+		text-indent: -9999px;
+		font-size: 0;
+	}
+	.tabs .social-links a:before,
+	.tabs .social-links a:after {
+		display: block;
+		position: absolute;
+		padding-left: 25px;
+		padding-top: 90px;
+		width: 80px;
+		height: 200px;		
+		text-indent: 0;
+		font: normal 30px Genericons;
+		color: #fff;
+		transition: 0.3s;
+	}
+	.tabs .social-links a:after {
+		margin-left: 85px;
+		padding-left: 26px;
+		padding-top: 80px;
+		font-size: 36px;
+	}
+	.tabs:hover .social-links a:before {
+		margin-left: -100px;
+	}
+	.tabs:hover .social-links a:after {
+		margin-left:  -5px;
+	}
+	.twitter-icon a:before,
+	.twitter-icon a:after {
+		content: "\f202";
+	}
+	.facebook-icon a:before,
+	.facebook-icon a:after {
+		content: "\f204";
+	}
+	.linkedin-icon a:before,
+	.linkedin-icon a:after {
+		content: "\f208";
+	}
+	.insta-icon a:before,
+	.insta-icon a:after {
+		content: "\f215";
+	}
+	.youtube-icon a:before,
+	.youtube-icon a:after {
+		content: "\f213";
+	}
+	.tumblr-icon a:before,
+	.tumblr-icon a:after {
+		content: "\f214";
+	}
+	.dribbble-icon a:before,
+	.dribbble-icon a:after {
+		content: "\f17d";
+	}
+	/**{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		box-sizing: border-box;
+	}
+	body {
+		background: gray;
+	}
+	h1 {
+		padding-left: 5%;
+	}
+	.container {
+		width: 95%;
+		height: 300px;
+		background: #8dfd4f;
+		margin: 25% 0 25% 5%;		
+	}
+	.accordion {
+		width: 100%;	
+		overflow: hidden;	
+	}
+	.tabs {
+		display: inline-block;
+		float: left;
+		position: relative;
+		width: 80px;
+		height: 300px;
+		border: 1px solid black;	
+		font-family: FontAwesome;
+		transition: 0.5s;
+	}
+	.tabs:before {
+		width: 1px;
+	}
+	.accordion .social-links {
+		text-align: center;
+		line-height: 300px;
+	}
+	/*.accordion ~ .tabs:hover  {
+		transform: translate(100%);		
+	}
+	.accordion .tabs:hover .paragraph {
+		transform: translate(0);
+	}*/
+
+</style>
+<body>
+<h1 class="title">Pure CSS3 Accordion Menu</h1>
+<div class="container">
+	<ul class="accordion">
+		<li class="tabs">
+			<div class="social-links twitter-icon"><a href="#">Twitter</a></div>
+			<div class="paragraph">
+				<h1>Twitter</h1>
+				<p>My thoughts in 140 characters or less. Sometimes, I do not know how to correctly use Twitter.</p>
+			</div>
+		</li>
+		<li class="tabs">
+			<div class="social-links facebook-icon"><a href="#">Facebook</a></div>
+			<div class="paragraph">
+				<h1>Facebook</h1>
+				<p>Where I get to stalk my friends and let them stalk me. A place to get people to stroke your ego.</p>
+			</div>
+		</li>
+		<li class="tabs">
+			<div class="social-links linkedin-icon"><a href="#">LinkedIn</a></div>
+			<div class="paragraph">
+				<h1>LinkedIn</h1>
+				<p>I act totally professional on this one. It is what the recruiters see, you see.</p>
+			</div>
+		</li>
+		<li class="tabs">
+			<div class="social-links insta-icon"><a href="#">Instagram</a></div>
+			<div class="paragraph">
+				<h1>Instagram</h1>
+				<p>Where I post my duckface pictures. Occasionally, I would post pictures of my food and my cats.</p>
+			</div>
+		</li>
+		<li class="tabs">
+			<div class="social-links youtube-icon"><a href="#">Youtube</a></div>
+			<div class="paragraph">
+				<h1>YouTube</h1>
+				<p>Just kidding! I do not have a YouTube account. I'm not too fond of the camera.</p>
+			</div>
+		</li>
+		<li class="tabs">
+			<div class="social-links tumblr-icon"><a href="#">Tumblr</a></div>
+			<div class="paragraph">
+				<h1>Tumblr</h1>
+				<p>I have a tumblr but I don't really use it. I still prefer WordPress. I'm quite old-fashioned.</p>
+			</div>
+		</li>
+		<li class="tabs">
+			<div class="social-links dribbble-icon"><a href="#">Dribbble</a></div>
+			<div class="paragraph">
+				<h1>Dribbble</h1>
+				<p>I do not have a Dribbble account. Would any of you be so kind and send me an invite? </p>
+			</div>
+		</li>
+	</ul>
+</div>
+</body>
+</html>
